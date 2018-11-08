@@ -11,13 +11,11 @@ RSpec.describe User, type: :model do
 
     it "emailが空だとNG" do
       @user = User.new(email: "",password: "000000")
-      @user.email = ""
       expect(@user.valid?).to eq(false)
     end
 
     it "passwordが空だとNG" do
       @user = User.new(email: "test@user", password: "")
-      @user.password = ""
       expect(@user.valid?).to eq(false)
     end
   end
