@@ -8,4 +8,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   enum role: {admin:1, member: 2}
+
+  has_many :houses, dependent: :destroy
 end
