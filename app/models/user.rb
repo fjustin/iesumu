@@ -10,4 +10,7 @@ class User < ApplicationRecord
   enum role: {admin:1, member: 2}
 
   has_many :houses, dependent: :destroy
+
+  # active storageでavatorを生成
+  has_one_attached :avatar
 end
