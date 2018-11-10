@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'users/index'
+  get 'users/show'
   resources :houses
   devise_for :users
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'

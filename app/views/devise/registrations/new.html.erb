@@ -26,6 +26,11 @@
     <%= f.select :role, {'administer' => 'admin', 'member' => 'member'}, {selected: 'member', include_blank: false}, {autofocus: 'true', class: 'form-control'}  %>
   </div>
 
+  <div class="field">
+    <%= f.label :avatar %>
+    <%= f.file_field :avatar %>
+  </div>
+
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>

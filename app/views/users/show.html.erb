@@ -1,0 +1,4 @@
+<% if current_user.avatar.attached? %>
+  <%= image_tag current_user.avatar.variant(resize: "100x100") %>
+  <%= current_user.email %>
+<% end %>
