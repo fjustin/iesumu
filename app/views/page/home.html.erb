@@ -1,7 +1,9 @@
 <div id="hello">
-<h2>Starr</h2>
+<h2>シェアハウス マッチング</h2>
 <p>{{ message }}</p>
+  <%= link_to 'シェアハウス一覧',houses_path %>
   <% if user_signed_in? %>
+    <%= link_to 'マイページ',users_show_path %>
     <%= link_to 'ログアウト',destroy_user_session_path,method: :delete %>
   <% else %>
     <%= link_to '初回登録',new_user_registration_path%>
