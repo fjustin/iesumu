@@ -10,5 +10,14 @@
   <%= @house.content %>
 </p>
 
+<p>
+  <strong>Thumb:</strong>
+  <% if @house.images.attached? %>
+    <% @house.images.each do |image| %>
+      <%= image_tag image %> <br>
+    <% end %>
+  <% end %>
+</p>
+
 <%= link_to 'Edit', edit_house_path(@house) %> |
 <%= link_to 'Back', houses_path %>
