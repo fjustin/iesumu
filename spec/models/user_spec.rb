@@ -23,5 +23,15 @@ RSpec.describe User, type: :model do
       @user = User.new(email: "test@user", password: "999999999", username: "")
       expect(@user.valid?).to eq(false)
     end
+
+    it "usernameが1文字以上10文字以内だと動く" do
+      @user = User.new(email: "test@test", password: "1010101", username: "riho")
+      expect(@user.valid?).to eq(true)
+    end
+
+    it "usernameが10文字以上だとvalidationに弾かれる" do
+      @user = User.new(email: "test@test", password: "10101010", username: "testtesttest")
+      expect(@user.valid?).to eq(false)
+    end
   end
 end
