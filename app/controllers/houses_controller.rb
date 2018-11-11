@@ -1,7 +1,7 @@
 class HousesController < ApplicationController
   before_action :set_house, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, :except => [:index,:show]
-  before_action :correct_user, only: [:edit,:update]
+  before_action :correct_user, only: [:edit,:update, :destroy]
 
   # GET /houses
   # GET /houses.json
@@ -71,12 +71,13 @@ class HousesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def house_params
-      params.require(:house).permit(:name,:content, images: [])
+      params.require(:house).permit(:name,:content,:user_id, images: [])
     end
 
     def correct_user
       house = House.find(params[:id])
       if current_user.id != house.user.id
+        flash[:notice] = "権限がありません"
         redirect_to houses_path
       end
     end
