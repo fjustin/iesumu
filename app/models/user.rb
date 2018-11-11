@@ -5,6 +5,7 @@ class User < ApplicationRecord
 
   validates :email, presence: true
   validates :password, presence: true
+  validates :username, presence: true
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   enum role: {admin:1, member: 2}
