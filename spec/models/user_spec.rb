@@ -1,4 +1,5 @@
 require 'rails_helper'
+require 'factory_bot'
 
 RSpec.describe User, type: :model do
   # pending "add some examples to (or delete) #{__FILE__}"
@@ -12,8 +13,8 @@ RSpec.describe User, type: :model do
     end
 
     it "emailが空だとNG" do
-      @user = User.new(email: "",password: "000000", username: "TEST MAN")
-      expect(@user.valid?).to eq(false)
+      @user = User.new(email: "", password: "000000",username: "TEST AMN")
+      expect(@user.save).to be_falsey
     end
 
     it "passwordが空だとNG" do
