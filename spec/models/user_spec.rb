@@ -4,9 +4,11 @@ RSpec.describe User, type: :model do
   # pending "add some examples to (or delete) #{__FILE__}"
 
   describe "バリデーションの挙動をテスト" do
+
+    let(:user_right) {User.new(email: "test@user",password: "000000", username: "TEST MAN")}
+
     it "emailとpasswordの両方が設定されていればOK" do
-      @user = User.new(email: "test@user",password: "000000", username: "TEST MAN")
-      expect(@user.valid?).to eq(true)
+      expect(user_right.valid?).to eq(true)
     end
 
     it "emailが空だとNG" do
