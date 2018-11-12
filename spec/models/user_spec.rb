@@ -37,4 +37,17 @@ RSpec.describe User, type: :model do
       expect(@user.valid?).to eq(false)
     end
   end
+
+  describe "houseとの紐付け関連をテスト" do
+
+    before do
+      @user = User.create(email: "house@house",password: "househouse",username: "HOUSEMAN")
+    end
+
+    it "userを削除するうと、userが投稿したhouseも削除" do
+      @user.houses.create(name: "池袋の楽しいシェアハウス",content: "池袋にある楽しいシェアハウスです")
+      expect{@user.destroy}.to change{ House.count }.by(-1)
+    end
+
+  end
 end
