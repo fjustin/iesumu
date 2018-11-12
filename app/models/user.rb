@@ -3,8 +3,9 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   #
 
-  validates :email, presence: true
-  validates :password, presence: true
+  validates :email,:password,:username, presence: true
+  validates :username, uniqueness: true
+  validates :username, length: {in: 1..10}
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   enum role: {admin:1, member: 2}
