@@ -65,9 +65,23 @@ RSpec.describe User, type: :model do
     end
 
     context "uniquenessのテスト" do
-      it "同じusernameが被った時にinvalid" do
+      it "usernameとemailが被った時にinvalid" do
         user.save!
         dup_user = user.dup
+        expect(dup_user.save).to be_falsey
+      end
+
+      it "emailが被った時にvalidation" do
+        user.save!
+        dup_user = user.dup
+        dup_user.username = "NEW TEST MAN"
+        expect(dup_user.save).to be_falsey
+      end
+
+      it "usernameが被った時にvalidation" do
+        user.save!
+        dup_user = user.dup
+        dup_user.email = "new@user.com"
         expect(dup_user.save).to be_falsey
       end
     end
