@@ -36,6 +36,41 @@ RSpec.describe User, type: :model do
       user.username = "riho" * 10
       expect(user.save).to be_falsey
     end
+
+    context "emailのvalidationに関するテスト" do
+      it ".じゃなくて,が利用されている" do
+        user.email = "foo@foo,com"
+        expect(user.save).to be_falsey
+      end
+
+      it "emailに@が利用されていない" do
+        user.email = "foo.org"
+        expect(user.save).to be_falsey
+      end
+
+      it "@の後に.が利用される" do
+        user.email = "example.user@foo.foo@bar_baz.com"
+        expect(user.save).to be_falsey
+      end
+
+      it "@の後のフォーマットが不自然" do
+        user.email = "foo@bar+baz.com"
+        expect(user.save).to be_falsey
+      end
+
+      it "..が利用されている" do
+        user.email = "foo@bar..com"
+        expect(user.save).to be_falsey
+      end
+    end
+
+    context "uniquenessのテスト" do
+      it "同じusernameが被った時にinvalid" do
+        user.save!
+        dup_user = user.dup
+        expect(dup_user.save).to be_falsey
+      end
+    end
   end
 
   describe "houseとの紐付け関連をテスト" do
