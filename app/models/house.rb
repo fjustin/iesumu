@@ -3,7 +3,7 @@ class House < ApplicationRecord
   extend Enumerize
 
   # 1を募集中、2を居住中、デフォルトを1とする。スコープとして指定するので募集ページと居住ページで分ける予定
-  enumerize :status,in: { empty: 1, full: 2 }, default: :house, scope: true
+  enumerize :status,in: [ :empty, :full ],default: :empty, scope: true
 
   validates :name,:content, presence: true
   validates :name, length: { maximum: 50 }
