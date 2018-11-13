@@ -41,6 +41,11 @@ RSpec.describe House, type: :model do
         house.name = "a" * 100
         expect(house).to be_invalid
       end
+
+      it "文字制限内でも空白だとNG" do
+        house.name = " " * 50
+        expect(house).to be_invalid
+      end
     end
 
     context "投稿が被った場合の挙動" do
