@@ -4,7 +4,12 @@ class User < ApplicationRecord
   #
 
   validates :email,:password,:username, presence: true
-  validates :username, uniqueness: true, length: {in: 1..10}
+  validates :username, uniqueness: true, length: {in: 1..30}
+
+  # emailのフォーマットを正規表現で指定
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
+  validates :email, uniqueness: true, format: { with: VALID_EMAIL_REGEX}
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   enum role: {admin:1, member: 2}
