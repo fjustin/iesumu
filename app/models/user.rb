@@ -4,8 +4,7 @@ class User < ApplicationRecord
   #
 
   validates :email,:password,:username, presence: true
-  validates :username, uniqueness: true
-  validates :username, length: {in: 1..10}
+  validates :username, uniqueness: true, length: {in: 1..10}
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   enum role: {admin:1, member: 2}

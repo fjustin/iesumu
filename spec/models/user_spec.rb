@@ -28,12 +28,12 @@ RSpec.describe User, type: :model do
     end
 
     it "usernameが1文字以上10文字以内だと動く" do
-      @user = User.new(email: "test@test", password: "1010101", username: "riho")
+      @user = User.new(email: "test@test", password: "1" * 9, username: "riho")
       expect(@user.save).to be_truthy
     end
 
     it "usernameが10文字以上だとvalidationに弾かれる" do
-      @user = User.new(email: "test@test", password: "10101010", username: "testtesttest")
+      @user = User.new(email: "test@test", password: "1" * 13, username: "testtesttest")
       expect(@user.save).to be_falsey
     end
   end
