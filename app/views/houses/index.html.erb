@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Houses</h1>
+<h1>募集中のシェアハウス一覧</h1>
 
 <table>
   <thead>
@@ -14,7 +14,7 @@
   </thead>
 
   <tbody>
-    <% @houses.each do |house| %>
+    <% @houses.with_status(:empty).each do |house| %>
       <tr>
         <td><%= house.name %></td>
         <td><%= house.content %></td>
