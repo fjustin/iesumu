@@ -26,6 +26,10 @@
     <%= form.file_field :images,multiple: true %>
   </div>
 
+  <div class="field">
+    <%= form.select :status, House.status.options %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

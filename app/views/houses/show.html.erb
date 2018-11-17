@@ -14,9 +14,14 @@
   <strong>Thumb:</strong>
   <% if @house.images.attached? %>
     <% @house.images.each do |image| %>
-      <%= image_tag image %> <br>
+      <%= image_tag image.variant(resize: "200x400") %> <br>
     <% end %>
   <% end %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @house.status %>
 </p>
 
 <%= link_to 'Edit', edit_house_path(@house) %> |

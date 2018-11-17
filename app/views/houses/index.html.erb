@@ -1,21 +1,24 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Houses</h1>
+<h1>募集中のシェアハウス一覧</h1>
 
 <table>
   <thead>
     <tr>
       <th>Name</th>
       <th>Content</th>
+      <th>Status</th>
+      <th>Thumbnail</th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
-    <% @houses.each do |house| %>
+    <% @houses.with_status(:empty).each do |house| %>
       <tr>
         <td><%= house.name %></td>
         <td><%= house.content %></td>
+        <td><%= house.status %></td>
         <td>
           <% if house.images.attached? %>
             <% house.images.each do |i| %>
@@ -23,6 +26,7 @@
             <% end %>
           <% end %>
         </td>
+
         <td><%= link_to 'Show', house %></td>
         <td><%= link_to 'Edit', edit_house_path(house) %></td>
         <td><%= link_to 'Destroy', house, method: :delete, data: { confirm: 'Are you sure?' } %></td>
