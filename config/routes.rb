@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  get 'users/index'
-  get 'users/show'
   resources :houses
+  resources :users, :only => [:index,:show]
+  resources :messages, :only => [:create]
+  resources :rooms, :only => [:create, :show, :index]
   devise_for :users
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   root to: 'page#home'
