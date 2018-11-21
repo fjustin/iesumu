@@ -24,5 +24,10 @@
   <%= @house.status %>
 </p>
 
+<p>
+  <strong>User:</strong>
+  <%= link_to @house.user.username,user_path(@house.user.id) %>
+</p>
+
 <%= link_to 'Edit', edit_house_path(@house) %> |
 <%= link_to 'Back', houses_path %>

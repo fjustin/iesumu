@@ -18,4 +18,8 @@ class User < ApplicationRecord
 
   # active storageでavatorを生成
   has_one_attached :avatar
+
+  # DMのためのアソシエーションを記述
+  has_many :messages, dependent: :destroy
+  has_many :entries, dependent: :destroy
 end
