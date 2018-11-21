@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="659b3ec2-3ee5-4c22-a086-2fd11e67d184" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/views/houses/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/houses/show.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/users/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/users/show.html.erb" afterDir="false" />
-    </list>
+    <list default="true" id="659b3ec2-3ee5-4c22-a086-2fd11e67d184" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
     <ignored path="$PROJECT_DIR$/public/system/" />
@@ -55,7 +52,7 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Gemfile" value="149" />
-          <entry key="erb" value="1972" />
+          <entry key="erb" value="1976" />
           <entry key="js" value="114" />
           <entry key="rb" value="8050" />
         </counts>
@@ -63,7 +60,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JavaScript" value="114" />
-          <entry key="RHTML" value="1972" />
+          <entry key="RHTML" value="1976" />
           <entry key="Ruby" value="8199" />
         </counts>
       </usages-collector>
@@ -92,7 +89,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/page/home.html.erb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="210">
@@ -101,11 +98,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/users/show.html.erb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="360">
-              <caret line="24" column="39" selection-start-line="24" selection-start-column="39" selection-end-line="24" selection-end-column="39" />
+              <caret line="24" column="35" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -410,12 +407,12 @@
       <workItem from="1542107258148" duration="7190000" />
       <workItem from="1542215522025" duration="3351000" />
       <workItem from="1542786936067" duration="89000" />
-      <workItem from="1542787166789" duration="2444000" />
+      <workItem from="1542787166789" duration="2681000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="68541000" />
+    <option name="totallyTimeSpent" value="68778000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -737,13 +734,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/page/home.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/houses/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
@@ -754,7 +744,14 @@
     <entry file="file://$PROJECT_DIR$/app/views/users/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
-          <caret line="24" column="39" selection-start-line="24" selection-start-column="39" selection-end-line="24" selection-end-column="39" />
+          <caret line="24" column="35" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/page/home.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
         </state>
       </provider>
     </entry>
