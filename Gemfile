@@ -43,6 +43,8 @@ gem 'rails_admin'
 
 # ログイン用
 gem 'devise'
+gem 'omniauth'
+gem 'omniauth-facebook'
 
 # 権限管理用
 gem 'cancancan'
