@@ -27,7 +27,29 @@
   </div>
 
   <div class="field">
+    <%= form.label :"シェアハウスは募集中か" %>
     <%= form.select :status, House.status.options %>
+  </div>
+
+  <!-- シェアハウスの詳細における入力欄 -->
+  <div class="field">
+    <%= form.label :"シェアハウスの人数" %>
+    <%= form.select :member,[["2人",2],["3人",3],["4人",4],["5人",5],["6人",6],["7人",7],["8人",8],["9人",9],["10人以上",10]] %>
+  </div>
+
+  <div class="field">
+    <%= form.label :"最寄駅" %>
+    <%= form.text_field :station %>
+  </div>
+
+  <div class="field">
+    <%= form.label :"住所" %>
+    <%= form.text_field :address %>
+  </div>
+
+  <div class="field">
+    <%= form.label :"1ヶ月あたりの家賃" %>
+    <%= form.select :price,[["1万以下",10000],["2万円代",20000],["3万円代",30000],["4万円代",40000],["5万円代",50000],["6万円代",60000],["7万円代",70000],["8万円代",80000],["9万円代",90000],["10万円以上",100000]] %>
   </div>
 
   <div class="actions">

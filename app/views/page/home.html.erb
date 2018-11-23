@@ -2,6 +2,7 @@
 <h2>シェアハウス マッチング</h2>
 <p>{{ message }}</p>
   <%= link_to 'シェアハウス一覧',houses_path %>
+  <%= link_to 'ユーザー一覧',users_path %>
   <% if user_signed_in? %>
     <%= link_to 'マイページ',user_path(current_user.id) %>
     <%= link_to 'ログアウト',destroy_user_session_path,method: :delete %>
