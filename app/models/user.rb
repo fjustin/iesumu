@@ -23,19 +23,25 @@ class User < ApplicationRecord
   has_many :messages, dependent: :destroy
   has_many :entries, dependent: :destroy
 
-  def self.find_for_oauth(auth)
-    user = User.where(uid: auth.uid, provider: auth.provider).first
-
-    unless user
-      user = User.create(
-          uid:      auth.uid,
-          provider: auth.provider,
-          username: auth.info.username,
-          email:    auth.info.email,
-          password: Devise.friendly_token[0, 20]
-      )
+  class << self
+    def find_or_create_for_oauth(auth)
+      find_or_create_by!(email: auth.info.email) do |user|
+        user.provider = auth.provider
+        user.uid = auth.uid
+        user.username = auth.info.name
+        user.email = auth.info.email
+        password = Devise.friendly_token[0..5]
+        logger.debug password
+        user.password = password
+      end
     end
 
-    user
+    def new_with_session(params, session)
+      if user_attributes = session['devise.user_attributes']
+        new(user_attributes) { |user| user.attributes = params }
+      else
+        super
+      end
+    end
   end
 end
