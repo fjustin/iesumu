@@ -38,8 +38,8 @@
   </div>
 
   <div class="field">
-    <%= form.label :"最寄駅" %>
-    <%= form.text_field :station %>
+    <%= form.label :station_id %><br />
+    <%= form.collection_select :station_id, Station.all, :id, :name %>
   </div>
 
   <div class="field">

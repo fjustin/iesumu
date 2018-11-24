@@ -2,6 +2,12 @@
 
 <h1>募集中のシェアハウス一覧</h1>
 
+<% @stations.each do |station| %>
+  <li>
+    <%= link_to station.name, { :controller => "houses", :action => "index", station:station.id } %>
+  </li>
+<% end %>
+
 <table>
   <thead>
     <tr>
@@ -18,11 +24,14 @@
       <tr>
         <td><%= house.name %></td>
         <td><%= house.content %></td>
+        <td><%= house.station_id %></td>
         <td><%= house.status %></td>
         <td>
           <% if house.images.attached? %>
-            <% house.images.each do |i| %>
-              <%= image_tag i.variant(resize: "200x400") %> <br>
+            <% house.images.each_with_index do |i,obj|  %>
+              <% if obj == 0 %>
+                <%= image_tag i.variant(resize: "200x400") %> <br>
+              <% end %>
             <% end %>
           <% end %>
         </td>
