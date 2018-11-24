@@ -287,4 +287,7 @@ Devise.setup do |config|
   # ActiveSupport.on_load(:devise_failure_app) do
   #   include Turbolinks::Controller
   # end
+  #
+  # Login for Facebook
+  config.omniauth :facebook, '187836908732865', 'b84dae0a18054229503d16aff6ad6e6e'
 end
