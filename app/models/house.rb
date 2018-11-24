@@ -12,4 +12,7 @@ class House < ApplicationRecord
   belongs_to :station
   has_many_attached :images
 
+  scope :station, ->(station) {
+    where("stations.id = ?", station) if station
+  }
 end

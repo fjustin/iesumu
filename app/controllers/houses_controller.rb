@@ -6,12 +6,17 @@ class HousesController < ApplicationController
   # GET /houses
   # GET /houses.json
   def index
-    @houses = House.all
+    @stations = Station.all
+    @houses = House.includes(:station).references(:station).station(params[:station])
   end
 
   # GET /houses/1
   # GET /houses/1.json
   def show
+    @stations = Station.all
+    @house = House.includes(:station)
+                 .references(:station)
+                 .find_by_id(params[:id]) or raise ActiveRecord::RecordNotFound
   end
 
   # GET /houses/new
