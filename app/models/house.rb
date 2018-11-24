@@ -9,6 +9,7 @@ class House < ApplicationRecord
   validates :name, length: { maximum: 50 }
 
   belongs_to :user
+  belongs_to :station
   has_many_attached :images
 
 end
