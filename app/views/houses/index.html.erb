@@ -28,8 +28,10 @@
         <td><%= house.status %></td>
         <td>
           <% if house.images.attached? %>
-            <% house.images.each do |i| %>
-              <%= image_tag i.variant(resize: "200x400") %> <br>
+            <% house.images.each_with_index do |i,obj|  %>
+              <% if obj == 0 %>
+                <%= image_tag i.variant(resize: "200x400") %> <br>
+              <% end %>
             <% end %>
           <% end %>
         </td>
